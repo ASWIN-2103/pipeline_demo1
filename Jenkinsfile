@@ -31,8 +31,6 @@ pipeline{
                                  stage('Integration test'){
                                                            agent{
                                                                   docker{
-                                                                          def absolutePath = WORKSPACE.replace('\\', '/').replace('C:', '/c')
-                                                                          echo "Converted absolute path: ${absolutePath}"
                                                                           image 'ubuntu'
                                                                         }
                                                                 }
