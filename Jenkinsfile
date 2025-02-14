@@ -14,7 +14,7 @@ pipeline{
            stage('three'){
                           when{
                                not{
-                                    branch:"main"
+                                    branch "main"
                                   }
                               }
                           steps{
@@ -22,7 +22,7 @@ pipeline{
                                }
                          }
            stage('four'){
-                         prallel{
+                         parallel{
                                  stage('unit test'){
                                                     steps{
                                                           echo 'Unit test running....' 
