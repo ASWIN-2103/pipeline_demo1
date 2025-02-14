@@ -32,7 +32,6 @@ pipeline{
                                                            agent{
                                                                   docker{
                                                                           image 'ubuntu'
-                                                                          args '/c/ProgramData/Jenkins/.jenkins/workspace/Pipeline_demo1@2'
                                                                         }
                                                                 }
                                                            steps{
