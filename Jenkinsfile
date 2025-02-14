@@ -32,7 +32,7 @@ pipeline{
                                                            agent{
                                                                   docker{
                                                                           image 'ubuntu'
-                                                                          args '-v $(pwd):/workspace -w /workspace'
+                                                                          args '/c/ProgramData/Jenkins/.jenkins/workspace/Pipeline_demo1@2'
                                                                         }
                                                                 }
                                                            steps{
