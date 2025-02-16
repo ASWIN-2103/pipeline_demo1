@@ -33,13 +33,11 @@ pipeline{
                                                                   docker{
                                                                           image 'ubuntu'
                                                                         }
-                                                                  stages {
-                                                                   stage('Build') {
-                                                                          steps {
-                                                                          script {
-                                                                  docker.image('ubuntu').inside {
-                                                                          sh 'echo "Running inside Docker container"'
-                    }
+                                                                stages {
+        stage('Build') {
+            steps {
+                script {
+                    sh 'echo "Running inside Docker container"'
                 }
             }
         }
