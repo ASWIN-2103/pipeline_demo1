@@ -34,13 +34,6 @@ pipeline {
                             image 'ubuntu'
                         }
                     }
-                    steps {
-                        script {
-                            def workspacePath = sh(script: 'pwd -W', returnStdout: true).trim()
-                            echo "Converted workspace path: ${workspacePath}"
-                            sh "echo 'Running inside Docker container'"
-                        }
-                    }
                 }
             }
         }
