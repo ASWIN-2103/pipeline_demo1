@@ -31,10 +31,19 @@ pipeline{
                                  stage('Integration test'){
                                                            agent{
                                                                   docker{
-                                                                          docker.image('ubuntu').inside('-w /c/ProgramData/Jenkins/.jenkins/workspace/Pipeline_demo1@2/') {
-    sh 'echo Running inside Docker'
-                                                                          }
+                                                                          image 'ubuntu'
                                                                         }
+                                                                  stages {
+                                                                   stage('Build') {
+                                                                          steps {
+                                                                          script {
+                                                                  docker.image('ubuntu').inside {
+                                                                          sh 'echo "Running inside Docker container"'
+                    }
+                }
+            }
+        }
+    }
                                                                 }
                                                            steps{
                                                                  echo 'Running integration test....'
