@@ -35,12 +35,16 @@ pipeline {
                         }
                     }
                     steps {
-                        echo 'Running integration test....'
-                        sh 'echo "Running inside Docker container"'
+                        script {
+                            def workspacePath = sh(script: 'pwd -W', returnStdout: true).trim()
+                            echo "Converted workspace path: ${workspacePath}"
+                            sh "echo 'Running inside Docker container'"
+                        }
                     }
                 }
             }
         }
     }
 }
+
 
