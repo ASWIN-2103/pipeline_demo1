@@ -30,11 +30,9 @@ pipeline {
                 }
                 stage('Integration test') {
                     agent {
-                        docker {
-                            image 'ubuntu'
-                        }
+                        docker { image 'ubuntu' }
                     }
-                    steps{
+                    steps {
                         echo 'Integration test running....'
                     }
                 }
@@ -42,5 +40,6 @@ pipeline {
         }
     }
 }
+
 
 
