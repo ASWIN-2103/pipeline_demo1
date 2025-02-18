@@ -34,6 +34,9 @@ pipeline {
                             image 'ubuntu'
                         }
                     }
+                    steps{
+                        echo 'Integration test running....'
+                    }
                 }
             }
         }
